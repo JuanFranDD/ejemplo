@@ -1,0 +1,722 @@
+<html lang="en">
+
+<head>
+  <!-- Metadatos -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelTime</title>
+
+  <!-- Enlace al archivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Nuestro script personalizado -->
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Inicio del NavBar -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <!-- Contenedor de la barra de navegación -->
+    <div class="container">
+      <a class="navbar-brand" href="index.html" id="logo"><span>T</span>ravel<span>T</span>ime</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <!-- Menú desplegable -->
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#book">Reservar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#packages">Paquetes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Servicios</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#gallary" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Galería
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#gallary1">Egipto</a></li>
+              <li><a class="dropdown-item" href="#gallary2">Amazonas</a></li>
+              <li><a class="dropdown-item" href="#gallary3">España</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experiencias">Experiencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#lugares">Lugares</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#libertad">Libertad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#personal">Equipo</a>
+          </li>
+        </ul>
+        <!-- Formulario de búsqueda -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Destino...">
+          <button class="btn btn-primary" type="button">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Fin del NavBar -->
+
+  <!-- Sección de Inicio -->
+  <div class="home">
+    <div class="content">
+      <h5>Bienvenidos al Mundo</h5>
+      <h1>Visita <span class="changecontent"></span></h1>
+      <p>Un mundo lleno de oportunidades te espera, ¡VAMOS!</p>
+      <a href="#book">Reserva tu mejor Viaje</a>
+    </div>
+  </div>
+  <!-- Fin de la sección de inicio -->
+
+  <!-- Sección de Reserva -->
+  <section class="book" id="book">
+    <div class="container">
+      <!-- Título -->
+      <div class="main-text">
+        <h1><span>R</span>eservar</h1>
+      </div>
+
+      <div class="row">
+        <!-- Imagen -->
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/book-img.png" alt="">
+          </div>
+        </div>
+        <!-- Formulario de reserva -->
+        <div class="col-md-6 py-3 py-md-0">
+          <form action="#">
+            <input type="text" class="form-control" placeholder="Dónde?" required><br>
+            <input type="text" class="form-control" placeholder="Cuántas personas?" required><br>
+            <input type="date" class="form-control" placeholder="FechaIda" required><br>
+            <input type="date" class="form-control" placeholder="FechaVuelta" required><br>
+            <textarea class="form-control" rows="5" name="text"
+              placeholder="Introduce tu nombre y los detalles de la RESERVA"></textarea>
+            <input type="submit" value="CONFIRMAR" class="submit" required>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de la sección de Reserva -->
+
+  <!-- Sección de Paquetes -->
+  <section class="packages" id="packages">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>P</span>aquetes</h1>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="./images/uk.png" alt="">
+            <div class="card-body">
+              <h3>Londres</h3>
+              <p>Visita una de las ciudades más emblemáticas de Inglaterra</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+              </div>
+              <h6>Precio: <strong>700€</strong></h6>
+              <a href="#book">Reservar AHORA</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="./images/france.png" alt="">
+            <div class="card-body">
+              <h3>Francia</h3>
+              <p>Visita la ciudad del amor, lugar donde personas de todo el mundo vienen a admirar su belleza</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Precio: <strong>850€</strong></h6>
+              <a href="#book">Reserva AHORA</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="./images/pakistan.png" alt="">
+            <div class="card-body">
+              <h3>Pakistan</h3>
+              <p>Visita una tierra de aventureros, donde el riesgo y la emoción están servidos</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Precio: <strong>450€</strong></h6>
+              <a href="#book">Reservar AHORA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/italy.png" alt="">
+            <div class="card-body">
+              <h3>Italia</h3>
+              <p>Visita la empoderada ciudad romana, desde el Coliseo hasta las ruinas</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Precio: <strong>850€</strong></h6>
+              <a href="#book">Reservar AHORA</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/india.png" alt="">
+            <div class="card-body">
+              <h3>India</h3>
+              <p>Visita una ciudad diferente, donde la cultura y tradiciones te harán sentir como en casa</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Precio: <strong>350€</strong></h6>
+              <a href="#book">Reservar AHORA</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="./images/us.png" alt="">
+            <div class="card-body">
+              <h3>Estados Unidos</h3>
+              <p>Visita la ciudad más grande y lujosa de toda América</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Precio: <strong>1000€</strong></h6>
+              <a href="#book">Reservar AHORA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de la sección de Paquetes -->
+
+  <!-- Sección de Servicios -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>S</span>ervicios</h1>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-hotel"></i>
+            <div class="card-body">
+              <h3>Mejores Hoteles</h3>
+              <p>Estancias llenas de encanto con Hoteles y Hostales desde 4 estrellas en adelante</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-utensils"></i>
+            <div class="card-body">
+              <h3>Comida & Bebidas</h3>
+              <p>Disponemos de uno de los mejores servicios de restauración existente en todo el mundo</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-bullhorn"></i>
+            <div class="card-body">
+              <h3>Guías Turísticos</h3>
+              <p>Nuestra plantilla está compuesta por los mejores profesionales del sector turístico</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-globe-asia"></i>
+            <div class="card-body">
+              <h3>Por Todo el Mundo</h3>
+              <p>Viaja a cualquier punto del mundo desde cualquier parte del mundo</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-plane"></i>
+            <div class="card-body">
+              <h3>Viaja Rápido</h3>
+              <p>Contamos con los vuelos más rápidos de toda Europa, América y Asia</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <i class="fas fa-hiking"></i>
+            <div class="card-body">
+              <h3>Aventuras</h3>
+              <p>Puenting, Senderismo, Buceo, no te pierdas nuestro gran catálogo de eventos</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Fin de la sección de Servicios -->
+
+  <!-- Sección de Galería -->
+  <section class="gallary" id="gallary">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>G</span>alería</h1>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g1.png" alt="" height="230px">
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g2.png" alt="" height="230px">
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g3.png" alt="" height="230px">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g4.png" alt="" height="230px">
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g5.png" alt="" height="230px">
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/g6.png" alt="" height="230px">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Fin de la sección de Galería -->
+
+  <!-- Sección de Experiencias -->
+  <section class="about" id="experiencias">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>E</span>xperiencias</h1>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+
+        <div class="col-md-12 py-3 py-md-0">
+          <div class="card">
+            <video controls width="100%">
+              <source src="./video/aventurate.mp4" type="video/mp4">
+              Tu navegador no soporta la etiqueta de vídeo.
+            </video>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Fin de la sección Experiencias -->
+
+  <!-- Sección de Lugares -->
+  <section class="gallary" id="lugares">
+    <div class="container">
+      <div class="main-txt">
+        <h1><span>L</span>ugares</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <a href="#" class="place" data-lat="25.6872" data-lon="32.6396" data-zoom="10">
+              <img src="./images/g1.png" alt="" height="230px" width="100%">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <a href="#" class="place" data-lat="51.5074" data-lon="-0.1278" data-zoom="10">
+              <img src="./images/g2.png" alt="" height="230px" width="100%">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <a href="#" class="place" data-lat="25.2048" data-lon="55.2708" data-zoom="10">
+              <img src="./images/g3.png" alt="" height="230px" width="100%">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <a href="#" class="place" data-lat="48.8566" data-lon="2.3522" data-zoom="10">
+              <img src="./images/g4.png" alt="" height="230px" width="100%">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="map" style="margin-top: 20px; height: 400px;"></div>
+    </div>
+  </section>
+  <!-- Fin de la sección de Lugares -->
+
+  <!-- Sección de Carrousel -->
+  <section class="about" id="libertad">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>L</span>ibertad</h1>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+
+        <div class="contenedor-imagen">
+          <div class="contenedor">
+            <div class="box" id="box">
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="espania.jpg" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="alemania.jpg" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="marruecos.jpg" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="china.jpg" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="francia.jpg" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="italy.png" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="us.png" alt="">
+                </div>
+              </div>
+              <div class="elementos">
+                <div class="imagenes">
+                  <img src="india.png" alt="">
+                </div>
+              </div>
+              <div class="piso flex">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Fin de la sección Carrousel -->
+
+  <!-- Sección Personal-->
+  <section class="gallary" id="personal">
+    <div class="container">
+      <div class="main-txt">
+        <h1><span>E</span>quipo</h1>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+        <div class="wrapper">
+
+          <div class="cardEquipo" data-md-text="Paco es un guía turístico excepcional para viajes en grupo.">
+            <div class="face front">
+              <img src="images/guia.jpg" alt="city">
+              <h1 class="text-h1">Paco</h1>
+            </div>
+            <div class="face back">
+              <h2 class="text-h2">GUÍA</h2>
+              <p class="text-p">
+                Paco es sin duda uno de los mejores guías turísticos de los que disponemos en el equipo, su energía y
+                capacidad de entretenimiento, hará de su viaje un ¡AVENTURA!.
+              </p>
+              <div class="links">
+                <a class="link-a" href="#">CONTACTO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardEquipo" data-md-text="Isabel, nuestra chef con 3 estrellas Michelin.">
+            <div class="face front">
+              <img src="images/chef.jpg" alt="city">
+              <h1 class="text-h1">Isabel</h1>
+            </div>
+            <div class="face back">
+              <h2 class="text-h2">CHEF</h2>
+              <p class="text-p">
+                Con 3 estrellas michelín a sus espaldas, es un delirio dudar de la capacidad de nuestra mejor chef a la
+                hora de deleitarnos con sus mejores platos ¡ESTRELLA!
+              </p>
+              <div class="links">
+                <a class="link-a" href="#">CONTACTO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardEquipo" data-md-text="Juan es el director que maneja todos los aspectos del viaje.">
+            <div class="face front">
+              <img src="images/director.jpg" alt="city">
+              <h1 class="text-h1">Juan</h1>
+            </div>
+            <div class="face back">
+              <h2 class="text-h2">DIRECTOR</h2>
+              <p class="text-p">
+                Nuestra estrella de guía, esa persona capaz de solucionar cualquier imprevisto pre y post viaje, un as
+                de la resolución y excelente tomador de decisiones, os presentamos nuestro ¡CABEZA DE EQUIPO!
+              </p>
+              <div class="links">
+                <a class="link-a" href="#">CONTACTO</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardEquipo" data-md-text="Katy, nuestra comercial, asegura la organización perfecta de su viaje.">
+            <div class="face front">
+              <img src="images/comercial.jpg" alt="city">
+              <h1 class="text-h1">Katy</h1>
+            </div>
+            <div class="face back">
+              <h2 class="text-h2">COMERCIAL</h2>
+              <p class="text-p">
+                Encantadora y resolutiva, con ella en la organización de cualquier tipo de viaje, nada puede
+                fallar, definición de excelencia y elegacia, nuestro mejor ¡ENLACE!
+              </p>
+              <div class="links">
+                <a class="link-a" href="#">CONTACTO</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de la sección Personal -->
+
+  <!-- Sección de SobreNosotros -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>Sobre </span>Nosotros</h1>
+      </div>
+
+      <div class="row" style="margin-top: 50px;">
+
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/about-img.png" alt="">
+          </div>
+        </div>
+
+        <div class="col-md-6 py-3 py-md-0">
+          <h2>Cómo trabajamos?</h2>
+          <p>Somos una compañía en constante crecimiento, construyendo una gran corporación gracias a la colaboración de
+            todo nuestro equipos, clientes y personas que confían ciegamente en poder cumplir el sueño de todos, VER
+            MUNDO.<br>
+            Mientras sigamos teniendo el apoyo de miles de personas y la capacidad de seguir cumpliendo objetivos, jamás
+            os faltarán planes con nosotros. !A VIVIR!</p>
+          <button id="about-btn">Leer Más...</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Fin de la sección SobreNosotros -->
+
+  <!-- Sección de LogoMovil -->
+  <section class="gallary" id="gallary" style="background-color: #ffa500;">
+    <div class="scene">
+      <span class="cloud cloud--small"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" id="plane" class="plane" viewBox="0 0 104 47" x="0" y="0" width="104"
+        height="47" background-color="#ffffff00">
+        <g id="avion">
+          <path
+            d="M20 36C25 38 69 43 80 40 92 38 106 33 104 21 103 13 95 13 90 9 85 5 79 2 76 1 70-1 65 0 60 2 57 3 25 14 23 13 21 12 12 2 9 3 5 4 1 5 1 6 2 7 15 34 20 36Z"
+            fill="#0085b2" />
+          <path d="M23 36C28 37 69 43 80 40 88 38 98 34 102 29 82 32 22 36 23 36Z" stroke="#ffffff00" stroke-width="1"
+            fill="#14647f" />
+          <path d="M42 39C48 40 60 40 67 40 71 32 72 26 72 26L44 29C44 29 44 35 42 39Z" stroke="#ffffff00"
+            stroke-width="1" fill="#0c3b4d" />
+          <path d="M7 16C7 16 9 20 10 22 13 27 16 13 16 13L7 16Z" stroke="#ffffff00" stroke-width="1" fill="#0c3b4d" />
+          <path d="M40 29C40 29 41 34 34 42 27 51 48 46 58 39 74 28 72 25 72 25L40 29Z" stroke="#ffffff00"
+            stroke-width="1" fill="#006e96" />
+          <path d="M5 14C5 14 6 15 3 19 1 22 10 20 13 17 19 11 17 11 17 11L5 14Z" stroke="#ffffff00" stroke-width="1"
+            fill="#006e96" />
+          <path d="M90 10C88 8 83 4 80 3 78 3 68 7 68 8 70 12 80 8 90 10Z" stroke="#ffffff00" stroke-width="1"
+            fill="#0c3b4d" />
+          <path d="M89 9C87 7 82 3 79 2 77 2 67 6 67 7 69 11 79 7 89 9Z" stroke="#ffffff00" stroke-width="1"
+            fill="#afe2ff" />
+        </g>
+      </svg>
+      <span class="cloud cloud--medium"></span>
+      <span class="cloud cloud--large"></span>
+    </div>
+    </p>
+
+  </section>
+
+  <!-- Fin de la sección de Avión -->
+
+
+  <!-- Pie de página -->
+  <footer id="footer">
+    <h1><span>T</span>ravel<span>T</span>ime</h1>
+    <p>Empresa española encargada de la gestión de viajes intercontinentales por todo el mundo</p>
+    <div class="social-links">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-pinterest-p"></i>
+    </div>
+    <div class="credit">
+      <p><a href="#">SA TravelTime</a></p>
+    </div>
+    <div class="copyright">
+      <p>&copy;Copyright SA TravelTime. Todos los Derechos Reservados</p>
+    </div>
+  </footer>
+  <!-- Fin del Pie de página -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
